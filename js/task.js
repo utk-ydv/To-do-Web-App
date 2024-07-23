@@ -59,16 +59,40 @@
 				}, 1200);
 
 				let taskname;
-				if (taskno === 0) {
-					taskname = "Complete task to get in league";
-				} else if (taskno <= 2) {
-					taskname = "Silver";
-				} else if (taskno <= 5) {
-					taskname = "Gold";
+				if(taskno == 0){
+					taskname = "Complete task to Enter in League";
+				}else if (taskno >= 0 && taskno <= 5) {
+					taskname = "Novice";
+				} else if (taskno >= 6 && taskno <= 15) {
+					taskname = "Apprentice";
+				} else if (taskno >= 16 && taskno <= 30) {
+					taskname = "Journeyman";
+				} else if (taskno >= 31 && taskno <= 50) {
+					taskname = "Adept";
+				} else if (taskno >= 51 && taskno <= 75) {
+					taskname = "Expert";
+				} else if (taskno >= 76 && taskno <= 105) {
+					taskname = "Veteran";
+				} else if (taskno >= 106 && taskno <= 140) {
+					taskname = "Master";
+				} else if (taskno >= 141 && taskno <= 180) {
+					taskname = "Grandmaster";
+				} else if (taskno >= 181 && taskno <= 225) {
+					taskname = "Champion";
+				} else if (taskno >= 226 && taskno <= 275) {
+					taskname = "Legend";
+				} else if (taskno >= 276 && taskno <= 330) {
+					taskname = "Mythic";
+				} else if (taskno >= 331 && taskno <= 390) {
+					taskname = "Heroic";
+				} else if (taskno >= 391 && taskno <= 455) {
+					taskname = "Epic";
+				} else if (taskno >= 456 && taskno <= 500) {
+					taskname = "Immortal";
 				} else {
-					taskname = "GOD";
-				}		
-				document.getElementById('rank').innerHTML = "League : " + taskno;
+					taskname = "Unknown"; // Default case if task number does not fall into any defined range
+				}
+				document.getElementById('rank').innerHTML = "League : " + taskname;
 			}
 		}
 	};
@@ -86,7 +110,7 @@
 			updateOutput();
 			function updateOutput() {
 				// update the output element with the new value of taskno
-				document.getElementById('rank').innerHTML = "League : " + taskno;
+				document.getElementById('rank').innerHTML = "League : " + "Complete task to Enter in League";
 			  }
 		});
 	});
